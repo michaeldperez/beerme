@@ -1,2 +1,2 @@
-# beerme
-An app using locating the nearest places for you to find a beer. 
+# BeerMe
+An application that locates the nearest places for you to get a beer. Cheers!
