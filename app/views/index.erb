@@ -1,10 +1,10 @@
 <h2>Create an Account or Sign In</h2>
 <div class="create_account">
   <%= @errors if @errors %>
-  <%+ @new_user if @new_user %>
+  <%= @new_user if @new_user %>
   <form action = "/users/new" method = "post">
     <label>First name:</label>
-    <input type = "text" name = "user[first_name]" placeholder = "First Name" value = "<%= @new_user.first_name %>" >
+    <input type = "text" name = "user[first_name]" placeholder = "First Name" value = "<%= @new_user.first_name %>">
     <label>Last name:</label>
     <input type = "text" name = "user[last_name]" placeholder = "Last Name" value = "<%= @new_user.last_name %>">
     <label>Email</label>
