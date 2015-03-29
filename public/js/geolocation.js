@@ -1,11 +1,4 @@
 var failMsg = "BeerMe was unable to acquire your location.";
-var locAppend = $('div.text p');
-
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(success,fail);
-} else {
-  $('.fail').append('<span>' + failMsg + '</span>');
-}
 
 var success = function(position){
   var lon = '<h3>Longitude: ';
@@ -15,3 +8,17 @@ var success = function(position){
   $('.longitude').append(lon);
   $('.latitude').append(lat);
 }
+
+var fail = function() {
+  $('.fail').append(failMsg);
+}
+
+$(document).ready(function(){
+
+
+  $('.locator').on('click', function() {
+    navigator.geolocation.getCurrentPosition(success,fail);
+  });
+
+
+})
