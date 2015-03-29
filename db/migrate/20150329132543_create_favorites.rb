@@ -5,5 +5,6 @@ class CreateFavorites < ActiveRecord::Migration
       t.string :venue, :address, :city, :postal_code, :phone, :url
       t.integer :latitude, :longitude
       t.timestamps
+    end
   end
 end
