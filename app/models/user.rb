@@ -3,9 +3,9 @@ class User < ActiveRecord::Base
 
   has_many :favorites
 
-  validate :first_name, :last_name, :email, :password_hash, { presence: true }
-  validate :email, { uniqueness: true }
-  validates :correct_email_format
+  validates :first_name, :last_name, :email, :password_hash, { presence: true }
+  validates :email, { uniqueness: true }
+  validate :correct_email_format
 
   def password
     @password ||= Password.new(password_hash)
