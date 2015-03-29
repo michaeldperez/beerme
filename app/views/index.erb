@@ -1,14 +1,16 @@
 <h2>Create an Account or Sign In</h2>
 <div class="create_account">
-  <form action = "">
+  <%= @errors if @errors %>
+  <%+ @new_user if @new_user %>
+  <form action = "/users/new" method = "post">
     <label>First name:</label>
-    <input type = "text" name = "firstname" placeholder = "First Name">
+    <input type = "text" name = "user[first_name]" placeholder = "First Name" value = "<%= @new_user.first_name %>" >
     <label>Last name:</label>
-    <input type = "text" name = "lastname" placeholder = "Last Name">
+    <input type = "text" name = "user[last_name]" placeholder = "Last Name" value = "<%= @new_user.last_name %>">
     <label>Email</label>
-    <input type = "text" name = "email" placeholder = "Email">
+    <input type = "email" name = "user[email]" placeholder = "Email" value = "<%= @new_user.email %>">
     <label>Password</label>
-    <input type="text" name = "password" placeholder = "Password">
+    <input type="password" name = "user[password]" placeholder = "Password">
     <input type = "submit" value = "Sign Up!">
   </form>
 </div>
