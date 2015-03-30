@@ -20,7 +20,7 @@ require "sinatra/reloader" if development?
 
 # require 'dotenv'
 
-# dotenv.load
+# Dotenv.load
 
 require 'erb'
 
