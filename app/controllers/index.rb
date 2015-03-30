@@ -20,7 +20,7 @@ post '/users' do
     session[:id] = @user.id
     session[:lon] = params[:lon]
     session[:lat] = params[:lat]
-    {redirect: "/profile"}.to_json
+    { redirect: "/profile" }.to_json
   else
     status 400
     { errors: @user.errors.full_messages }.to_json
@@ -29,12 +29,12 @@ end
 
 post '/login' do
   content_type :json
-  @user = User.where(email: params[:email]).first
-  if @user && @user.authenticate(params[:password])
+  @user = User.where(email: params[:user][:email]).first
+  if @user && @user.authenticate(params[:user][:password])
     session[:id] = @user.id
-    session[:lat] = params[:lat]
     session[:lon] = params[:lon]
-    {redirect: "/profile"}.to_json
+    session[:lat] = params[:lat]
+    { redirect: "/profile" }.to_json
   else
     status 400
     { errors: "Could not find account, or email did not match account" }.to_json
