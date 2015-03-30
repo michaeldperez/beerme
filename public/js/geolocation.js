@@ -1,8 +1,8 @@
 var failMsg = "BeerMe was unable to acquire your location.";
 
 var success = function(position){
-  var lon = position.coords.longitude.toString();
-  var lat = position.coords.latitude.toString();
+  lon = position.coords.longitude.toString();
+  lat = position.coords.latitude.toString();
   console.log(lon);
   console.log(lat);
 
