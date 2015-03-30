@@ -14,15 +14,16 @@ get '/logout' do
 end
 
 post '/users' do
+  content_type :json
   @user = User.new(params[:user])
   if @user.save
     session[:id] = @user.id
     session[:lon] = params[:lon]
     session[:lat] = params[:lat]
-    redirect '/profile'
+    {redirect: "/profile"}.to_json
   else
-    @errors = @user.errors.full_messages.to_sentence
-    erb :index
+    status 400
+    {errors: @user.errors.full_messages }.to_json
   end
 end
 
@@ -32,7 +33,7 @@ post '/login' do
     session[:id] = @user.id
     redirect "/profile"
   else
-    @errors = "Could not find account or/ email did not match account"
+    @errors = "Could not find account, or email did not match account"
     erb :index
   end
 end
