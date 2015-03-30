@@ -1,10 +1,10 @@
 var failMsg = "BeerMe was unable to acquire your location.";
 
 var success = function(position){
-  var form = $(this);
+  var form = $('.locatenewuser');
+  console.log(form);
   var lon = position.coords.longitude.toString();
   var lat = position.coords.latitude.toString();
-
   var request = $.ajax({
     url: '/users',
     type: 'POST',
@@ -12,16 +12,15 @@ var success = function(position){
         lon: lon,
         lat: lat,
         user: {
-        email: form.find('....').val(),
-        email: form.find('....').val(),
-        email: form.find('....').val(),
-        email: form.find('....').val(),
-        email: form.find('....').val(),
+        first_name: form.find('.createfn').val(),
+        last_name: form.find('.createln').val(),
+        email: form.find('.createm').val(),
+        password: form.find('.createpw').val(),
+      }
     },
   });
 
   request.done(function(response) {
-
     window.location.href = response.redirect
   });
 

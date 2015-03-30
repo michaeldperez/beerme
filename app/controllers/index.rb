@@ -23,7 +23,7 @@ post '/users' do
     {redirect: "/profile"}.to_json
   else
     status 400
-    {errors: @user.errors.full_messages }.to_json
+    { errors: @user.errors.full_messages }.to_json
   end
 end
 
