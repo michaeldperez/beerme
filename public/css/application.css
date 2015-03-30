@@ -1,0 +1,42 @@
+.bgdiv {
+  background-image: url('../images/taps.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 25em;
+  color: #FFFFFF;
+  -khtml-opacity:.50;
+  -moz-opacity:.50;
+  -ms-filter:"alpha(opacity=50)";
+  filter:alpha(opacity=50);
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.5);
+  opacity:.40;
+  width: 100%;
+  height: 25em;
+}
+
+/*form {
+  display: inline;
+}*/
+
+input {
+  display: block;
+  margin: 0.5em;
+}
+
+.title {
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 80px;
+  text-align: center;
+}
+
+/*.create_account {
+  display: inline-block;
+  height: 170px;
+  width: 186px;
+}
+
+.login {
+  display: inline-block;
+  height: 145px;
+  width: 186px;
+}
+*/
