@@ -1,22 +1,30 @@
 var failMsg = "BeerMe was unable to acquire your location.";
 
 var success = function(position){
-  var lon = '<h3>Longitude: ';
-  var lat = '<h3>Latitude: ';
-  lon += position.coords.longitude + '</h3>';
-  lat += position.coords.latitude + '</h3>';
-  $('.longitude').append(lon);
-  $('.latitude').append(lat);
+  var lon = position.coords.longitude;
+  var lat = position.coords.latitude;
+
+
+  var request = $.ajax({
+    url: '/users',
+    type: 'POST',
+    data: { lat: lat, lon: lon },
+  });
+
+  request.done(function() {
+    console.log("success");
+  });
 }
 
 var fail = function() {
-  $('.fail').append(failMsg);
+  console.log(failMsg);
 }
 
 $(document).ready(function(){
 
 
-  $('.locator').on('click', function() {
+  $('.locatenewuser').on('click', function(event) {
+    event.preventDefault();
     navigator.geolocation.getCurrentPosition(success,fail);
   });
 
