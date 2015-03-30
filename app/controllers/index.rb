@@ -28,13 +28,16 @@ post '/users' do
 end
 
 post '/login' do
+  content_type :json
   @user = User.where(email: params[:email]).first
   if @user && @user.authenticate(params[:password])
     session[:id] = @user.id
-    redirect "/profile"
+    session[:lat] = params[:lat]
+    session[:lon] = params[:lon]
+    {redirect: "/profile"}.to_json
   else
-    @errors = "Could not find account, or email did not match account"
-    erb :index
+    status 400
+    { errors: "Could not find account, or email did not match account" }.to_json
   end
 end
 
