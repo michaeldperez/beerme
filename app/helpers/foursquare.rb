@@ -1,6 +1,5 @@
 helpers do
 
-
   def get_fs_data
    response = HTTParty.get("https://api.foursquare.com/v2/venues/explore", query:{
     ll: latlon,
