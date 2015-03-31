@@ -1,9 +1,23 @@
-$(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+var getTodaysDate = function () {
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1;
+  var yyyy = today.getFullYear();
+
+  if(dd<10) {
+      dd = '0' + dd
+  }
+
+  if(mm < 10) {
+      mm = '0' + mm
+  }
+
+  today = mm + '/' + dd + '/' + yyyy;
+}
+
+$(document).ready(function() {
+
 });
 
 
