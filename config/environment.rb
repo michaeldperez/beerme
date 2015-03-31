@@ -18,6 +18,8 @@ require 'logger'
 require 'httparty'
 require 'multi_xml'
 
+require 'json'
+
 require 'sinatra'
 require "sinatra/reloader" if development?
 
