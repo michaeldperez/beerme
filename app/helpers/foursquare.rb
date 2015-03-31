@@ -38,3 +38,13 @@ end
 # p "distance: #{test_data["location"]["distance"]*0.000621371192} miles"
 # p "people here now: #{test_data["hereNow"]["summary"]}"
 # p "URL: #{test_data["url"]}"
+
+# 21st Amendment Example:
+# info = parse(get_fs_data)
+# test_data = info["response"]["groups"][0]["items"][0]["venue"]
+# p "name: #{test_data["name"]}"
+# p "phone: #{test_data["contact"]["formattedPhone"]}"
+# p "location: #{test_data["location"]["formattedAddress"].join(", ")}"
+# p "distance: #{to_miles(test_data["location"]["distance"])} miles"
+# p "people here now: #{test_data["hereNow"]["summary"]}"
+# p "URL: #{test_data["url"]}"
