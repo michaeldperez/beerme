@@ -2,7 +2,8 @@
 <h1 class = "title">BeerMe!</h1>
 <div class="users">
 <%= @errors if @errors %>
- <h4>Create an Account</h4>
+<h4 class = "formtitle">Create an Account</h4>
+<h4 class = "formtitle">Sign In</h4>
   <div class="create_account">
     <form class = "locatenewuser" action = "/users" method = "post">
       <label>First name:</label>
@@ -17,8 +18,16 @@
     </form>
   </div>
 
-  <h4>Sign In</h4>
-  <div class="login">
+<!--   <form class="pure-form">
+    <fieldset class="pure-group">
+        <input type="text" class="pure-input-1-2" placeholder="Username">
+        <input type="text" class="pure-input-1-2" placeholder="Password">
+        <input type="email" class="pure-input-1-2" placeholder="Email">
+    </fieldset>
+    <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Sign in</button>
+</form> -->
+
+<!--   <div class="login">
     <form class = "locateuser" action = "/login" method = "post">
       <label>Email</label>
       <input class = "loginem" type = "email" name = "email" placeholder = "Email">
@@ -27,7 +36,16 @@
       <input type = "submit" value = "Log In">
     </form>
   </div>
-</div>
+</div> -->
+
+
+<form class="pure-form locateuser" action = "/login" method = "post">
+    <fieldset class="pure-group">
+        <input type="email" name = "email" class="pure-input-1-4 loginem" placeholder="Email">
+        <input type="password" class="pure-input-1-4 loginpw" placeholder="Password">
+    </fieldset>
+    <button type="submit" class="pure-button pure-input-1-4 pure-button-primary">Sign in</button>
+</form>
 
 <!-- <div class="getlocation">
   <h1>Find Your Location: </h1>
