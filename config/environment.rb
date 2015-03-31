@@ -15,6 +15,9 @@ require 'pg'
 require 'active_record'
 require 'logger'
 
+require 'httparty'
+require 'multi_xml'
+
 require 'sinatra'
 require "sinatra/reloader" if development?
 

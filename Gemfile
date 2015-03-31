@@ -7,6 +7,9 @@ gem 'dotenv'
 # PostgreSQL driver
 gem 'pg'
 
+gem 'httparty'
+gem 'multi_xml'
+
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
