@@ -13,10 +13,14 @@ var getTodaysDate = function () {
       mm = '0' + mm
   }
 
-  today = mm + '/' + dd + '/' + yyyy;
+  today = yyyy + mm + dd;
+
+  return today;
 }
 
 $(document).ready(function() {
+
+$('.date').html("Today's Date: " + getTodaysDate());
 
 });
 
