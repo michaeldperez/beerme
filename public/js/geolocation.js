@@ -72,15 +72,18 @@ var failLogin = function() {
 $(document).ready(function(){
 
 
-  $('.create_account').on('submit', function(event) {
+  $('.locatenewuser').on('submit', function(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(success,fail);
   });
 
-  $('.login').on('submit', function(event){
+  // .create_account
+
+  $('.locateuser').on('submit', function(event){
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(succLogin,failLogin);
   });
 
+// .login
 
 })
