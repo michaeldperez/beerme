@@ -5,7 +5,6 @@ $(document).ready(function() {
   $('.favorite').on('click', function(event){
     event.preventDefault();
     var favorite = $(this).parents()
-    debugger
     $.ajax({
       url: '/profile',
       type: 'POST',
@@ -17,8 +16,12 @@ $(document).ready(function() {
         url: favorite.find('.url').val(),
       },
     })
-    .done(function() {
-      console.log("success");
+    .done(function(response) {
+      window.location.href = response.redirect;
+    })
+    .fail(function(response){
+      errors = JSON.parse(response.responseText).errors
+      alert(errors);
     })
   });
 })

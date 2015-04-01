@@ -33,13 +33,19 @@ post '/users' do
 end
 
 post '/profile' do
-  content_type :json
-  @favorite = Favorite.new
-  @favorite.venue = params[:venue]
-  @favorite.phone = params[:phone]
-  @favorite.address = params[:address]
-  @favorite.url = params[:url]
-  if @favorite.save
+  content_type :
+  @user = current_user
+  favorite = Favorite.new
+  favorite.venue = params[:venue]
+  favorite.phone = params[:phone]
+  favorite.address = params[:address]
+  favorite.url = params[:url]
+  if favorite.save
+    @user.favorites << favorite
+    { redirect: "/#{@user.id}/favorites" }
+  else
+    status 400
+    { errors: "Venue could not be saved." }.to_json
   end
 end
 
