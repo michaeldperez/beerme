@@ -15,6 +15,7 @@ end
 
 get '/:id/favorites' do
   @user = User.find(params[:id])
+  erb :favorites
 end
 
 post '/users' do
