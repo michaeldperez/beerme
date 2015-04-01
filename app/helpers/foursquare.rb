@@ -19,6 +19,10 @@ helpers do
     (meters*0.000621371192).round(2)
   end
 
+  def venues(parsed_hash)
+    parsed_hash["response"]["groups"][0]["items"]
+  end
+
   def latlon
     "#{session[:lat]},#{session[:lon]}"
   end

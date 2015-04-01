@@ -1,11 +1,20 @@
 <h2>Welcome, <%= @user.first_name.capitalize %>!</h2>
-<p>You look like you could user beer. Here are the nearest places to find one:</p>
-<p>Longitude: <%=session[:lon]%></p>
-<p>Latitude: <%=session[:lat]%></p>
-<p><%= get_fs_data %></p>
+<% info = parse(get_fs_data) %>
+<p>You look like you could user beer. Here are <%=venues(info).count%> nearby places to find one:</p>
+<p><% venues(info).each do |suggested| %></p>
+  <div class = "venue">
+  <ul>
+    <li>Name: <%= suggested["venue"]["name"] %></li>
+    <li>Phone: <%= suggested["venue"]["contact"]["formattedPhone"] %></li>
+    <li>Address: <%= suggested["venue"]["location"]["formattedAddress"].join(", ") %></li>
+    <li>Distance: <%= to_miles(suggested["venue"]["location"]["distance"]) %> miles</li>
+    <li>People currently checked in: <%= suggested["venue"]["hereNow"]["summary"] %> </li>
+    <li>URL: <%= suggested["venue"]["url"] %></li>
+    <a href="#">Add to favorites</a>
+  </ul>
+  </div>
+<% end %>
 
-<!-- <p class = "date"></p>
- -->
 <a href="/logout">log out</a></p>
 
 
