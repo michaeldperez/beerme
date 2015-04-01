@@ -13,6 +13,10 @@ get '/logout' do
   redirect '/'
 end
 
+get '/:id/favorites' do
+  @user = User.find(params[:id])
+end
+
 post '/users' do
   content_type :json
   @user = User.new(params[:user])
@@ -40,8 +44,3 @@ post '/login' do
     { errors: "Could not find account, or email did not match account" }.to_json
   end
 end
-
-
-# longitude: -122.39709250000001
-
-# Latitude: 37.7843667
