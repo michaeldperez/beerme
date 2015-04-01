@@ -2,6 +2,7 @@
 <a href="/<%= @user.id %>/favorites">View Favorites</a>
 <a href="/logout">Log out</a>
 <% info = parse(get_fs_data) %>
+
 <p>You look like you could user beer. Here are <%=venues(info).count%> nearby places to find one:</p>
 <p><% venues(info).each do |suggested| %></p>
   <div class = "venue">
@@ -14,7 +15,7 @@
     <li>Status: <%= suggested["venue"]["hours"]["status"] %></li>
     <li>People currently checked in: <%= suggested["venue"]["hereNow"]["summary"] %> </li>
     <li>URL: <a href="<%=suggested["venue"]["url"]%>"><%= suggested["venue"]["url"] %></a></li>
-    <a href="#">Add to favorites</a>
+    <a href="">Add to favorites</a>
   </ul>
   </div>
 <% end %>
