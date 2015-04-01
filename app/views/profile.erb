@@ -10,6 +10,7 @@
     <li>Phone: <%= suggested["venue"]["contact"]["formattedPhone"] %></li>
     <li>Address: <%= suggested["venue"]["location"]["formattedAddress"].join(", ") %></li>
     <li>Distance: <%= to_miles(suggested["venue"]["location"]["distance"]) %> miles</li>
+    <li>Status: <%= suggested["venue"]["hours"]["status"] %></li>
     <li>People currently checked in: <%= suggested["venue"]["hereNow"]["summary"] %> </li>
     <li>URL: <a href="<%=suggested["venue"]["url"]%>"><%= suggested["venue"]["url"] %></a></li>
     <a href="#">Add to favorites</a>
