@@ -4,23 +4,6 @@
 </video>
 
 <h1 class = "title">BeerMe!</h1>
-<!-- <div class="users">
-<%= @errors if @errors %> -->
-<!-- <h4 class = "formtitle">Create an Account</h4>
-<h4 class = "formtitle">Sign In</h4>
-  <div class="create_account">
-    <form class = "locatenewuser" action = "/users" method = "post">
-      <label>First name:</label>
-      <input class = "createfn" type = "text" name = "user[first_name]" placeholder = "First Name">
-      <label>Last name:</label>
-      <input class = "createln" type = "text" name = "user[last_name]" placeholder = "Last Name">
-      <label>Email</label>
-      <input class = "createm" type = "email" name = "user[email]" placeholder = "Email">
-      <label>Password</label>
-      <input class = "createpw" type="password" name = "user[password]" placeholder = "Password">
-      <input type = "submit" value = "Sign Up!">
-    </form>
-  </div> -->
 
 <form class="pure-form locatenewuser" action = "/users" method = "post">
   <fieldset class="pure-group">
@@ -32,17 +15,6 @@
   <button type="submit" class="button-error pure-button pure-input-1-4">Sign Up</button>
 </form>
 
-<!--   <div class="login">
-    <form class = "locateuser" action = "/login" method = "post">
-      <label>Email</label>
-      <input class = "loginem" type = "email" name = "email" placeholder = "Email">
-      <label>Password</label>
-      <input class = "loginpw" type="password" name = "password" placeholder = "Password">
-      <input type = "submit" value = "Log In">
-    </form>
-  </div>
-</div> -->
-
 
 <form class="pure-form locateuser" action = "/login" method = "post">
     <fieldset class="pure-group">
@@ -51,15 +23,4 @@
     </fieldset>
     <button type="submit" class="button-error pure-button pure-input-1-4">Sign in</button>
 </form>
-
-<!-- <div class="getlocation">
-  <h1>Find Your Location: </h1>
-  <form class = "locator" action = "/" method = "post">
-    <input type = "submit" value = "Get location">
-  </form>
-  <h2>Here is your location:</h2>
-  <section class = "longitude"></section>
-  <section class = "latitude"></section>
-  <section class = "fail"></section>
-</div> -->
 <!-- </div> -->
