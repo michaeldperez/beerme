@@ -4,13 +4,18 @@ $(document).ready(function() {
 
   $('.favorite').on('click', function(event){
     event.preventDefault();
-    var favorite = $(this).parents().find('.name').val();
+    var favorite = $(this).parents()
     debugger
     $.ajax({
       url: '/profile',
-      type: 'GET',
+      type: 'POST',
       dataType: 'json',
-      // data: {param1: 'value1'},
+      data: {
+        venue: favorite.find('.name').val(),
+        phone: favorite.find('.phone').val(),
+        address: favorite.find('.addy').val(),
+        url: favorite.find('.url').val(),
+      },
     })
     .done(function() {
       console.log("success");

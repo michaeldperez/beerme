@@ -32,6 +32,17 @@ post '/users' do
   end
 end
 
+post '/profile' do
+  content_type :json
+  @favorite = Favorite.new
+  @favorite.venue = params[:venue]
+  @favorite.phone = params[:phone]
+  @favorite.address = params[:address]
+  @favorite.url = params[:url]
+  if @favorite.save
+  end
+end
+
 post '/login' do
   content_type :json
   @user = User.where(email: params[:user][:email]).first
@@ -44,4 +55,5 @@ post '/login' do
     status 400
     { errors: "Could not find account, or email did not match account" }.to_json
   end
+
 end
