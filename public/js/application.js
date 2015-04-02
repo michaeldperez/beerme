@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   $('.favorite').on('click', function(event){
     event.preventDefault();
-    var favorite = event.target.parents();
+    var favorite = $(this).parents();
     $.ajax({
       url: '/profile',
       type: 'POST',
@@ -20,7 +20,7 @@ $(document).ready(function() {
       window.location.href = response.redirect;
     })
     .fail(function(response){
-      errors = JSON.parse(response.responseText).errors
+      // var errors = JSON.parse(response.responseText).errors
       alert(errors);
     })
   });
