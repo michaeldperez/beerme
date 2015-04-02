@@ -1,17 +1,21 @@
-<h2><%= @user.first_name.capitalize %>, here's a list of the places you enjoyed, or still want to check out:</h2>
-<% unless @user.favorites.empty? %>
-  <% @user.favorites.each do |favorite| %>
-  <div class = "venue">
-    <ul>
-      <li><%= favorite.venue %></li>
-      <li><%= favorite.address %></li>
-      <li><%= favorite.phone %></li>
-      <li><%= favorite.url %></li>
-      <li><a class = "remove" id = "<%= favorite.id %>" href="#">Remove</a></li>
-    </ul>
-  </div>
+<div class="profilebody">
+  <nav>
+    <a class = "nav" href="/logout">Log out</a>
+  </nav>
+  <h2><%= @user.first_name.capitalize %>, here's a list of the places you enjoyed, or still want to check out:</h2>
+  <% unless @user.favorites.empty? %>
+  <ul class = "venue-list">
+    <% @user.favorites.each do |favorite| %>
+      <li class = "venue">
+        <h4><%= favorite.venue %></h4>
+        <p><%= favorite.address %></p>
+        <p><%= favorite.phone %></p>
+        <p><%= favorite.url %></p>
+        <p><a class = "remove" id = "<%= favorite.id %>" href="#">Remove</a></p>
+      </li>
+    <% end %>
+  </ul>
+  <% else %>
+    <h4>You have not favorited any venues yet.</h4>
   <% end %>
-<% else %>
-  <h4>You have not favorited any venues yet.</h4>
-<% end %>
-<a href="/logout">Log out</a>
+</div>

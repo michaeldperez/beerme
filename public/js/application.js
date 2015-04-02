@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   $('.favorite').on('click', function(event){
     event.preventDefault();
-    var favorite = $(event.toElement).closest('ul');
+    var favorite = $(event.toElement).closest('li');
     $.ajax({
       url: '/profile',
       type: 'POST',
@@ -31,7 +31,7 @@ $(document).ready(function() {
   $('.remove').on('click', function(event){
     event.preventDefault();
     var id = this.id;
-    var venue = this.closest('ul');
+    var venue = this.closest('li');
     $.ajax({
       url: '/favorites/'+id,
       type: 'DELETE',
