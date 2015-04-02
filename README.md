@@ -1,2 +1,2 @@
 # BeerMe
-An application that locates the nearest places for you to get a beer. Cheers!
+An application your geolocation to pinpoint the nearest places for you to find a beer, all within walking distance.
