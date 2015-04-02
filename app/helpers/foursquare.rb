@@ -20,7 +20,9 @@ helpers do
   end
 
   def venues(parsed_hash)
-    parsed_hash["response"]["groups"][0]["items"]
+    parsed_hash["response"]["groups"][0]["items"].sort_by do |venue|
+      to_miles(venue["venue"]["location"]["distance"])
+    end
   end
 
   def latlon
