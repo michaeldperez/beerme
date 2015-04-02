@@ -1,26 +1,32 @@
-<h2>Welcome, <%= @user.first_name.capitalize %>!</h2>
-<a href="/<%= @user.id %>/favorites">View Favorites</a>
-<a href="/logout">Log out</a>
-<% info = parse(get_fs_data) %>
+<div class="profilebody">
+  <nav>
+    <a class = "nav" href="/<%= @user.id %>/favorites">View Favorites</a> ||
+    <a class = "nav" href="/logout">Log out</a>
+  </nav>
 
-<p>You look like you could user beer. Here are <%=venues(info).count%> nearby places to find one:</p>
-<p><% venues(info).each do |suggested| %></p>
-  <div class = "venue">
-  <ul>
-    <li class = "name">Name: <%= suggested["venue"]["name"] %></li>
-    <li class = "phone">Phone: <%= suggested["venue"]["contact"]["formattedPhone"] %></li>
-    <li class = "addy">Address: <%= suggested["venue"]["location"]["formattedAddress"].join(", ") %></li>
-    <li class = "dist">Distance: <%= to_miles(suggested["venue"]["location"]["distance"]) %> miles</li>
-    <li class = "desc">Description/Tips: <%= suggested["tips"][0]["text"] %>
-    <li class = "stat">Status: <%= suggested["venue"]["hours"]["status"] %></li>
-    <li class = "check">People currently checked in: <%= suggested["venue"]["hereNow"]["summary"] %> </li>
-    <li class = "url">URL: <a href="<%=suggested["venue"]["url"]%>"><%= suggested["venue"]["url"] %></a></li>
-    <li><a class = "favorite" href="">Add to favorites</a></li>
+  <h2>Welcome, <%= @user.first_name.capitalize %>!</h2>
+
+  <% info = parse(get_fs_data) %>
+
+  <h4>You look like you could user beer. Here are <%=venues(info).count%> nearby places to find one:</h4>
+  <ul class = "venue-list">
+  <% venues(info).each do |suggested| %>
+    <li class = "venue">
+      <h4 class = "name">Name: <%= suggested["venue"]["name"] %></h4>
+      <p class = "phone">Phone: <%= suggested["venue"]["contact"]["formattedPhone"] %></p>
+      <p class = "addy">Address: <%= suggested["venue"]["location"]["formattedAddress"].join(", ") %></p>
+      <p class = "dist">Distance: <%= to_miles(suggested["venue"]["location"]["distance"]) %> miles</p>
+      <p class = "desc">Description/Tips: <%= suggested["tips"][0]["text"] %>
+      <p class = "stat">Status: <%= suggested["venue"]["hours"]["status"] %></p>
+      <p class = "check">People currently checked in: <%= suggested["venue"]["hereNow"]["summary"] %> </p>
+      <p class = "url">URL: <a href="<%=suggested["venue"]["url"]%>"><%= suggested["venue"]["url"] %></a></p>
+      <p><a class = "favorite" href="">Add to favorites</a></p>
+    </li>
+  <% end %>
   </ul>
-  </div>
-<% end %>
 
-<a href="/logout">Log out</a></p>
+  <a href="/logout">Log out</a></p>
+</div
 
 
 

@@ -127,5 +127,37 @@ background-size: cover;
   text-shadow: 3px 3px #FF0000;
 }*/
 
+nav {
+  float: right;
+  position: relative;
+  right: 10px;
+}
 
+a.nav {
+  text-decoration: none;
+  color: #000000;
+}
 
+a.nav:visited {
+  text-decoration: none;
+}
+
+.profilebody {
+  margin: 30px;
+}
+
+.venue-list {
+  list-style-type: none;
+}
+
+.venue p {
+  margin: 0;
+}
+
+.venue {
+  width: 300px;
+  display: inline-block;
+  height: auto;
+  vertical-align: top;
+  margin: 10px;
+}
