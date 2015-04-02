@@ -37,7 +37,6 @@ var fail = function() {
 
 var succLogin = function(position){
   var form = $('.locateuser');
-  console.log(form);
   var lon = position.coords.longitude.toString();
   var lat = position.coords.latitude.toString();
   var request = $.ajax({
