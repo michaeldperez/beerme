@@ -34,7 +34,6 @@ end
 
 post '/profile' do
   content_type :json
-  p params
   @user = current_user
   favorite = Favorite.new
   favorite.venue = params[:venue]
@@ -62,5 +61,12 @@ post '/login' do
     status 400
     { errors: "Could not find account, or email did not match account" }.to_json
   end
-
 end
+
+delete '/favorites/:id' do
+  content_type :json
+  favorite = Favorite.find(params[:id])
+  favorite.destroy
+  {id: favorite.id}.to_json
+end
+

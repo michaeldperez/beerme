@@ -5,7 +5,6 @@ $(document).ready(function() {
   $('.favorite').on('click', function(event){
     event.preventDefault();
     var favorite = $(event.toElement).closest('ul');
-    debugger
     $.ajax({
       url: '/profile',
       type: 'POST',
@@ -18,16 +17,37 @@ $(document).ready(function() {
       },
     })
     .done(function(response) {
-      debugger
       alert("Venue added to your favorites!")
       window.location.href = response.redirect;
     })
     .fail(function(response){
-      debugger
       var errors = JSON.parse(response.responseText).errors
       alert(errors);
     })
   });
+
+
+
+  $('.remove').on('click', function(event){
+    event.preventDefault();
+    var id = this.id;
+    var venue = this.closest('ul')
+    debugger
+    $.ajax({
+      url: '/favorites/'+id,
+      type: 'DELETE',
+      dataType: 'json',
+      data: { id: id },
+    })
+    .done(function(response) {
+      venue.remove();
+      debugger
+      // window.location.href = response.redirect;
+    })
+    // .fail(function(response) {
+    //   var errors = JSON.parse(response.responseText).errors
+    //   alert(errors);
+  })
 })
 
 
