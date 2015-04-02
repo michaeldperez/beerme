@@ -24,8 +24,6 @@ input {
 }
 
 body {
-  font-family: Arial;
-  color: #FFFFFF;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -36,10 +34,12 @@ body {
   text-shadow: 3px 3px #000000;
   margin-bottom: 0;
   font-family: 'Bevan', cursive;
+  color: #FFFFFF;
   margin-top: 0;
 }
 
-.desc {
+.descript {
+  color: #FFFFFF;
   font-size: 1.25em;
   margin-top: 0;
 }
