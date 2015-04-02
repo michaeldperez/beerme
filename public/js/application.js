@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   $('.favorite').on('click', function(event){
     event.preventDefault();
-    var favorite = $(this).parents()
+    var favorite = event.target.parents();
     $.ajax({
       url: '/profile',
       type: 'POST',

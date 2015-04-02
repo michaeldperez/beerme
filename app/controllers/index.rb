@@ -33,7 +33,7 @@ post '/users' do
 end
 
 post '/profile' do
-  content_type :
+  content_type :json
   @user = current_user
   favorite = Favorite.new
   favorite.venue = params[:venue]
