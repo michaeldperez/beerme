@@ -16,7 +16,7 @@
       <p class = "phone">Phone: <%= suggested["venue"]["contact"]["formattedPhone"] %></p>
       <p class = "addy">Address: <%= suggested["venue"]["location"]["formattedAddress"].join(", ") %></p>
       <p class = "dist">Distance: <%= to_miles(suggested["venue"]["location"]["distance"]) %> miles</p>
-      <p class = "desc">Description/Tips: <%= suggested["tips"][0]["text"] %>
+      <p class = "desc">Description/Tips: <%= suggested["tips"][0]["text"] %></p>
       <p class = "stat">Status: <%= suggested["venue"]["hours"]["status"] %></p>
       <p class = "check">People currently checked in: <%= suggested["venue"]["hereNow"]["summary"] %> </p>
       <p class = "url">URL: <a href="<%=suggested["venue"]["url"]%>"><%= suggested["venue"]["url"] %></a></p>
@@ -25,7 +25,7 @@
   <% end %>
   </ul>
 
-  <a href="/logout">Log out</a></p>
+  <a href="/logout">Log out</a>
 </div
 
 

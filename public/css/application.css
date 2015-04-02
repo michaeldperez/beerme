@@ -133,12 +133,12 @@ nav {
   right: 10px;
 }
 
-a.nav {
+a {
   text-decoration: none;
   color: #000000;
 }
 
-a.nav:visited {
+a:visited {
   text-decoration: none;
 }
 
@@ -150,14 +150,32 @@ a.nav:visited {
   list-style-type: none;
 }
 
+/*.venue-list {
+  width: 1000px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 10px;
+  overflow: scroll;
+  white-space: nowrap;
+}*/
+
+/*li p {
+  word-wrap: break-word;
+  width: 11em;
+}*/
+
 .venue p {
   margin: 0;
 }
 
 .venue {
-  width: 300px;
+  width: 200px;
   display: inline-block;
-  height: auto;
+  word-wrap: break-word;
+  /*height: 200px;*/
   vertical-align: top;
-  margin: 10px;
+  margin: 0 30px;
 }
+
