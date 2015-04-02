@@ -31,8 +31,7 @@ $(document).ready(function() {
   $('.remove').on('click', function(event){
     event.preventDefault();
     var id = this.id;
-    var venue = this.closest('ul')
-    debugger
+    var venue = this.closest('ul');
     $.ajax({
       url: '/favorites/'+id,
       type: 'DELETE',
@@ -41,12 +40,11 @@ $(document).ready(function() {
     })
     .done(function(response) {
       venue.remove();
-      debugger
-      // window.location.href = response.redirect;
     })
-    // .fail(function(response) {
-    //   var errors = JSON.parse(response.responseText).errors
-    //   alert(errors);
+    .fail(function(response){
+      var errors = JSON.parse(response.responseText).errors
+      alert(errors);
+    })
   })
 })
 

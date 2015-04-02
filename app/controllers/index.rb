@@ -65,8 +65,13 @@ end
 
 delete '/favorites/:id' do
   content_type :json
-  favorite = Favorite.find(params[:id])
-  favorite.destroy
-  {id: favorite.id}.to_json
+  if request.xhr?
+    favorite = Favorite.find(params[:id])
+    favorite.destroy
+    { id: favorite.id }.to_json
+  else
+    status 400
+    { errors: "Selected favorite could not be removed."}.to_json
+  end
 end
 
