@@ -179,3 +179,8 @@ a:visited {
   margin: 0 30px;
 }
 
+.fslogo {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+}
