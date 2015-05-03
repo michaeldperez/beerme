@@ -1,6 +1,6 @@
 <div class="profilebody">
   <nav>
-    <a class = "nav" href="/logout">Log out</a>
+    <a href = "/profile" class = "nav" >Back</a> || <a class = "nav" href="/logout">Log out</a>
   </nav>
   <h2><%= @user.first_name.capitalize %>, here's a list of the places you enjoyed, or still want to check out:</h2>
   <% unless @user.favorites.empty? %>
