@@ -10,7 +10,9 @@ get '/profile' do
 end
 
 get '/logout' do
-  session.delete(:id)
+  session.delete(:id) # Try setting these to nil if this does not work.
+  session.delete(:lon)
+  session.delete(:lat)
   redirect '/'
 end
 
