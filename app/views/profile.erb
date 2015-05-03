@@ -9,6 +9,7 @@
   <% info = parse(get_fs_data) %>
 
   <h4>You look like you could user beer. Here are <%=venues(info).count%> nearby places to find one:</h4>
+
   <ul class = "venue-list">
   <% venues(info).each do |suggested| %>
     <li class = "venue">
@@ -18,7 +19,9 @@
       <p class = "dist">Distance: <%= to_miles(suggested["venue"]["location"]["distance"]) %> miles</p>
       <p class = "rate">Rating: <%= suggested["venue"]["rating"]%></p>
       <p class = "desc">Description/Tips: <%= suggested["tips"][0]["text"] %></p>
-      <p class = "stat">Status: <%= suggested["venue"]["hours"]["status"] %></p>
+
+      <p class = "stat">Status: <%= suggested["venue"]["hours"]["status"] if suggested["venue"]["hours"] %></p>
+
       <p class = "check">People currently checked in: <%= suggested["venue"]["hereNow"]["summary"] %> </p>
       <p class = "url">URL: <a href="<%=suggested["venue"]["url"]%>"><%= suggested["venue"]["url"] %></a></p>
       <p><a class = "favorite" href="">Add to favorites</a></p>

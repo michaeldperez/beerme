@@ -5,12 +5,12 @@ end
 
 get '/profile' do
   @user = User.find(session[:id])
-  p venues(parse(get_fs_data))
+  # p venues(parse(get_fs_data))
   erb :profile
 end
 
 get '/logout' do
-  session.delete(:id) # Try setting these to nil if this does not work.
+  session.delete(:id)
   session.delete(:lon)
   session.delete(:lat)
   redirect '/'
