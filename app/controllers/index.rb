@@ -16,7 +16,7 @@ get '/logout' do
   redirect '/'
 end
 
-get '/:id/favorites' do
+get '/:id/favorites' do # Should be users/:id/favorites
   @user = User.find(params[:id])
   erb :favorites
 end
@@ -66,7 +66,7 @@ post '/login' do
   end
 end
 
-delete '/favorites/:id' do
+delete '/favorites/:id' do # Should be users/:id/favorites/:id
   content_type :json
   if request.xhr?
     favorite = Favorite.find(params[:id])

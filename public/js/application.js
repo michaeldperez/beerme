@@ -33,7 +33,7 @@ $(document).ready(function() {
     var id = this.id;
     var venue = this.closest('li');
     $.ajax({
-      url: '/favorites/'+id,
+      url: '/favorites/'+id, // This needs to be users/id/favorites/id
       type: 'DELETE',
       dataType: 'json',
       data: { id: id },
