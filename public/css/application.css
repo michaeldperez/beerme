@@ -185,6 +185,10 @@ a:visited {
   left: 10px;
 }
 
+.latitude, .longitude {
+  display: none;
+}
+
 #map-canvas {
   height: 400px;
   width: 600px;
