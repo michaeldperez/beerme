@@ -4,7 +4,7 @@ function initialize(lat, lon) {
     zoom: 8
   };
   var map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions); // Here's were modal goes.
+      mapOptions); // Here's were modal will go.
 }
 
 $(document).ready(function(){
