@@ -25,4 +25,24 @@ $(document).ready(function(){
 
     initialize(name, lat, lon);
   });
+
+  $('.directions').on('click', function(event){
+    event.preventDefault();
+    var venue = $(event.toElement).closest('li'),
+        dlat = parseFloat(venue.find('.latitude').html()),
+        dlon = parseFloat(venue.find('.longitude').html());
+    $.ajax({
+      url: '/directions',
+      type: 'POST',
+      dataType: 'json',
+      data: { destination: {
+        dlat: dlat,
+        dlon: dlon
+        }
+      }
+    })
+    .done(function(response){
+      console.log("sucess");
+    })
+  });
 })
