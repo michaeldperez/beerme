@@ -17,4 +17,18 @@ helpers do
     "#{coordinates[:dlat]},#{coordinates[:dlon]}"
   end
 
+  def directions_list(directions)
+    route = directions["routes"][0]["legs"][0]
+    start_address = route["start_address"]
+    end_address = route["end_address"]
+    instructions = {
+      "start_address" => start_address,
+      "end_address" => end_address,
+    }
+    route["steps"].each_with_index do |step, index|
+      instructions["#{index+1}"] = step["html_instructions"]
+    end
+    instructions
+  end
+
 end
