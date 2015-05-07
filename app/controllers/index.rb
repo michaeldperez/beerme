@@ -21,6 +21,13 @@ get '/:id/favorites' do # Should be users/:id/favorites
   erb :favorites
 end
 
+post '/directions' do
+  content_type :json
+  # p origin
+  # p destination(params[:destination])
+  p get_directions(destination(params[:destination]))
+end
+
 post '/users' do
   content_type :json
   @user = User.new(params[:user])
