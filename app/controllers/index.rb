@@ -3,7 +3,7 @@ get '/' do
   erb :index
 end
 
-get '/profile' do
+get '/profile' do # Should be users/:id
   @user = User.find(session[:id])
   # p venues(parse(get_fs_data))
   erb :profile
@@ -19,6 +19,10 @@ end
 get '/:id/favorites' do # Should be users/:id/favorites
   @user = User.find(params[:id])
   erb :favorites
+end
+
+get '/users/map'
+  { lat: session[:lat], lon: session[:lon] }.to_json
 end
 
 post '/users' do
