@@ -25,8 +25,8 @@
       <p class = "check">People currently checked in: <%= suggested["venue"]["hereNow"]["summary"] %> </p>
       <p class = "url">URL: <a href="<%=suggested["venue"]["url"]%>"><%= suggested["venue"]["url"] %></a></p>
       <p><a class = "favorite" href="#">Add to favorites</a></p>
-      <p class="latitude"><%= suggested %></p>
-      <p class="longitude"><%= suggested %></p>
+      <p class="latitude"><%= suggested["venue"]["location"]["lat"] %></p>
+      <p class="longitude"><%= suggested["venue"]["location"]["lng"] %></p>
       <p><a class = "map" href="#">Map</a> || <a class = "directions" href="#">Directions</a></p>
     </li>
   <% end %>
