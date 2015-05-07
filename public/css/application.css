@@ -184,3 +184,8 @@ a:visited {
   bottom: 0;
   left: 10px;
 }
+
+#map-canvas {
+  height: 400px;
+  width: 600px;
+}
