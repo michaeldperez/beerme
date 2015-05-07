@@ -10,7 +10,8 @@ function initialize(lat, lon) {
 $(document).ready(function(){
   $('.map').on('click', function(event){
     event.preventDefault();
-    var lat = ,
-        lon = ;
+    var venue = $(event.toElement).closest('li'),
+        lat = venue.find('.latitude').html(),
+        lon = venue.find('.longitude').html();
     initialize(lat, lon);
 })
