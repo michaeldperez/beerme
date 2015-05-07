@@ -25,7 +25,8 @@ post '/directions' do
   content_type :json
   # p origin
   # p destination(params[:destination])
-  p get_directions(destination(params[:destination]))
+  # p parse(get_directions(destination(params[:destination])))
+  p directions_list(parse(get_directions(params[:address])))
 end
 
 post '/users' do
