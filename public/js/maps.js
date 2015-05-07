@@ -6,11 +6,12 @@ function initialize(name, lat, lon) {
   };
   var map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions); // Here's were modal will go.
-
+  var beerIcon = "../images/beer-icon.png"
   var marker = new google.maps.Marker({
     position: location,
     map: map,
-    title: name
+    title: name,
+    icon: beerIcon
   });
 }
 
