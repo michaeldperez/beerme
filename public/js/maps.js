@@ -29,6 +29,7 @@ $(document).ready(function(){
   $('.directions').on('click', function(event){
     event.preventDefault();
     var venue = $(event.toElement).closest('li'),
+        address = venue.find('.addy').html(),
         dlat = parseFloat(venue.find('.latitude').html()),
         dlon = parseFloat(venue.find('.longitude').html());
     $.ajax({
@@ -38,7 +39,8 @@ $(document).ready(function(){
       data: { destination: {
         dlat: dlat,
         dlon: dlon
-        }
+        },
+        address: address
       }
     })
     .done(function(response){
