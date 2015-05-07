@@ -21,10 +21,6 @@ get '/:id/favorites' do # Should be users/:id/favorites
   erb :favorites
 end
 
-get '/users/map'
-  { lat: session[:lat], lon: session[:lon] }.to_json
-end
-
 post '/users' do
   content_type :json
   @user = User.new(params[:user])
