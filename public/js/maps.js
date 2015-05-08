@@ -44,7 +44,14 @@ $(document).ready(function(){
       }
     })
     .done(function(response){
-      console.log("sucess");
+      $('.directions-list').html('');
+      var directionsList = response,
+          list = "<ul>";
+      for (i in directionsList) {
+        list += "<li>" + i + ": " + directionsList[i] + "</li>"
+      }
+      list += "</ul>";
+      $('.directions-list').html(list);
     })
   });
 })
