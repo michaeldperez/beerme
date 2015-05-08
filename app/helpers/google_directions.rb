@@ -26,7 +26,7 @@ helpers do
       "end_address" => end_address,
     }
     route["steps"].each_with_index do |step, index|
-      instructions["#{index+1}"] = step["html_instructions"]
+      instructions["Step #{index+1}"] = step["html_instructions"]
     end
     instructions
   end
