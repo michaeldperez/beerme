@@ -29,6 +29,7 @@ $(document).ready(function(){
   $('.directions').on('click', function(event){
     event.preventDefault();
     var venue = $(event.toElement).closest('li'),
+        name = venue.find('.name').html(),
         address = venue.find('.addy').html(),
         dlat = parseFloat(venue.find('.latitude').html()),
         dlon = parseFloat(venue.find('.longitude').html());
@@ -46,7 +47,7 @@ $(document).ready(function(){
     .done(function(response){
       $('.directions-list').html('');
       var directionsList = response,
-          list = "<ul>";
+          list = "<h3>Directions to "+name+"(approx.)</h3><ul>";
       for (i in directionsList) {
         list += "<li>" + i + ": " + directionsList[i] + "</li>"
       }
