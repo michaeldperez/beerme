@@ -13,9 +13,9 @@ helpers do
     "#{session[:lat]},#{session[:lon]}"
   end
 
-  def destination(coordinates)
-    "#{coordinates[:dlat]},#{coordinates[:dlon]}"
-  end
+  # def destination(coordinates)
+  #   "#{coordinates[:dlat]},#{coordinates[:dlon]}"
+  # end
 
   def directions_list(directions)
     route = directions["routes"][0]["legs"][0]
