@@ -27,7 +27,7 @@ post '/directions' do
   # p destination(params[:destination])
   # p parse(get_directions(destination(params[:destination])))
   directions = directions_list(parse(get_directions(params[:address])))
-  p directions
+  directions.to_json
 end
 
 post '/users' do
