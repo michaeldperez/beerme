@@ -22,8 +22,8 @@ helpers do
     start_address = route["start_address"]
     end_address = route["end_address"]
     instructions = {
-      "start_address" => start_address,
-      "end_address" => end_address,
+      "Start Address" => start_address,
+      "End Address" => end_address,
     }
     route["steps"].each_with_index do |step, index|
       instructions["Step #{index+1}"] = step["html_instructions"]
