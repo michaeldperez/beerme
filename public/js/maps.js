@@ -47,7 +47,7 @@ $(document).ready(function(){
     .done(function(response){
       $('.directions-list').html('');
       var directionsList = response,
-          list = "<h3>Directions to " + name + " (approx.)</h3><ul>";
+          list = "<h3>Directions to " + name + " (approx.):</h3><ul>";
       for (i in directionsList) {
         list += "<li>" + i + ": " + directionsList[i] + "</li>"
       }
