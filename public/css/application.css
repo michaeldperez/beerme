@@ -190,12 +190,16 @@ a:visited {
 }
 
 #map-canvas {
+  display: inline-block;
   height: 400px;
-  width: 600px;
+  margin-right: 10px;
+  width: 550px;
 }
 
 .directions-list {
+  display: inline-block;
   height: 400px;
-  width: 600px;
-  overflow: auto;
+  margin-left: 10px;
+  width: 400px;
+  overflow: scroll;
 }
