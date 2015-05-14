@@ -196,6 +196,14 @@ a:visited {
   width: 550px;
 }
 
+#directions-panel {
+  display: inline-block;
+  height: 400px;
+  margin-left: 10px;
+  width: 400px;
+  overflow: scroll;
+}
+
 .directions-list {
   display: inline-block;
   height: 400px;
