@@ -17,9 +17,9 @@ function initialize(startLat, startLon) {
   // map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 }
 
-function calcRoute(startLat, startLon, endLat, endLon) {
+function calcRoute(startLat, startLon, venue_destination) {
   var start = new google.maps.LatLng(startLat, startLon);
-  var end = new google.maps.LatLng(endLat, endLon);
+  var end = venue_destination;
   var request = {
     origin: start,
     destination: end,
@@ -39,8 +39,10 @@ $(document).ready(function(){
     event.preventDefault();
     var venue = $(event.toElement).closest('li'),
         name = venue.find('.name').html(),
-        endLat = parseFloat(venue.find('.latitude').html()),
-        endLon = parseFloat(venue.find('.longitude').html());
+        address = venue.find('.addy').html(),
+        venue_destination = name + ',' + address, // Using this.
+        endLat = parseFloat(venue.find('.latitude').html()), // not this.
+        endLon = parseFloat(venue.find('.longitude').html()); // and not this.
     $.ajax({
       url: '/location',
       type: 'GET',
@@ -49,7 +51,8 @@ $(document).ready(function(){
     .done(function(response){
       $('#directions-panel').html('');
       initialize(response.startLat, response.startLon);
-      calcRoute(response.startLat, response.startLon, endLat, endLon);
+      // calcRoute(response.startLat, response.startLon, endLat, endLon);
+      calcRoute(response.startLat, response.startLon, venue_destination);
     })
   });
 })
