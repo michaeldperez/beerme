@@ -21,6 +21,11 @@ get '/:id/favorites' do # Should be users/:id/favorites
   erb :favorites
 end
 
+get '/location' do
+  content_type :json
+  { startLat: session[:lat], startLon: session[:lon] }.to_json
+end
+
 post '/directions' do
   content_type :json
   # p origin
