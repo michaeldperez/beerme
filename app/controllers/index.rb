@@ -26,15 +26,6 @@ get '/location' do
   { startLat: session[:lat], startLon: session[:lon] }.to_json
 end
 
-post '/directions' do
-  content_type :json
-  # p origin
-  # p destination(params[:destination])
-  # p parse(get_directions(destination(params[:destination])))
-  directions = directions_list(parse(get_directions(params[:address])))
-  directions.to_json
-end
-
 post '/users' do
   content_type :json
   @user = User.new(params[:user])
