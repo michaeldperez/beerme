@@ -10,3 +10,18 @@ Venue information includes it's name, address, phone, web address, and current p
 You can also view a map of the location and receive directions to the venue from your current location using the [Google Maps](http://maps.google.com) API.
 
 If you visited and enjoyed a particular venue, or want to save a location for future visits, you can store the venue's information on a personalized *favorites* page.
+
+## Languages
+
+- Ruby
+- JavaScript
+
+## Libraries and Frameworks
+
+- Sinatra
+- JQuery
+
+## APIs
+
+- [Foursquare](https://developer.foursquare.com/)
+- [Google Maps](https://developers.google.com/maps/)
