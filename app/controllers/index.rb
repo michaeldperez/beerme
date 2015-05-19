@@ -50,7 +50,7 @@ post '/profile' do
   favorite.url = params[:url]
   if favorite.save
     @user.favorites << favorite
-    { redirect: "/profile" }.to_json
+    { venue: favorite.venue, redirect: "/profile" }.to_json
   else
     status 400
     { errors: "Venue could not be saved." }.to_json
