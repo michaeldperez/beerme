@@ -17,7 +17,7 @@ $(document).ready(function() {
       },
     })
     .done(function(response) {
-      alert("Venue added to your favorites!")
+      alert(response.venue + " added to your favorites!")
       window.location.href = response.redirect;
     })
     .fail(function(response){
