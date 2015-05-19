@@ -17,7 +17,9 @@ $(document).ready(function() {
       },
     })
     .done(function(response) {
-      alert(response.venue + " added to your favorites!")
+      // alert(response.venue + " added to your favorites!")
+      $.modal("<div class='fav-modal'><h3>"+response.venue+" added to your favorites</h3></div>");
+      setTimeout($.modal.close, 5000);
       window.location.href = response.redirect;
     })
     .fail(function(response){
