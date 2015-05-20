@@ -224,3 +224,30 @@ a:visited {
   vertical-align: middle;
   width: 250px;
 }
+
+/*New homepage*/
+
+header {
+  padding-left: 20px;
+  padding-right: 20px; /*until grid*/
+}
+
+.container {
+  min-height: 100%;
+}
+
+.brand {
+  float: left;
+  display: inline-block;
+}
+
+.navigation-list {
+  float: right;
+  list-style-type: none;
+}
+
+.navigation-list li {
+  float: left;
+  margin-left: 10px;
+}
+
