@@ -227,39 +227,3 @@ a:visited {
 
 /*New homepage*/
 
-header {
-  padding-left: 20px;
-  padding-right: 20px; /*until grid*/
-  min-width: 100%;
-}
-
-.container {
-  min-height: 100%;
-}
-
-.brand {
-  float: left;
-  display: inline-block;
-}
-
-.navigation-list {
-  float: right;
-  list-style-type: none;
-}
-
-.navigation-list li {
-  float: left;
-  margin-left: 10px;
-}
-
-.si-icon {
-  float: right;
-}
-
-.icon-box {
-  height: 250px;
-  width: 250px;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-}
