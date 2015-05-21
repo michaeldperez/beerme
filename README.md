@@ -20,6 +20,8 @@ If you visited and enjoyed a particular venue, or want to save a location for fu
 
 - Sinatra
 - JQuery
+- [Simple Grid](http://thisisdallas.github.io/Simple-Grid/)
+- [Simple Modal](http://www.ericmmartin.com/projects/simplemodal/)
 
 ## APIs
 
