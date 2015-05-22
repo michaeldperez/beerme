@@ -41,13 +41,24 @@
 
   .button {
     background: linear-gradient(to bottom, #FF0000, #CF2C0C);
+    border: 1px solid #CF2C0C;
     border-radius: 5px;
+    display: inline-block;
+    height: 50px;
+    padding: 10px 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 100px;
+  }
+
+  .button a {
     color: #FFFFFF;
     font-weight: bold;
-    padding: 20px 15px;
-    vertical-align: middle;
+    position: relative;
     text-decoration: none;
-
+    text-shadow: 1px 1px #000000;
+    top: 5px;
+    vertical-align: middle;
   }
 
 </style>
@@ -60,8 +71,8 @@
       <div class="content">
         <p class = "beerme">Beer Me</p>
         <h4 class = "descript">Beer Me uses your geolocation to pinpoint the nearest places for you to find a beer, and helps get you there ASAP.</h4>
-        <a class="button" href="#">Sign In</a>
-        <a class="button" href="#">Sign Up</a>
+        <div class="button"><a href="#">Sign In</a></div>
+        <div class="button"><a href="#">Sign Up</a></div>
       </div>
     </div>
   </div>
