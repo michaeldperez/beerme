@@ -2,6 +2,16 @@
 
 $(document).ready(function() {
 
+  var entryPoints = ['.login', '.signup'];
+
+  entryPoints.forEach(function(entry){
+    $(entry).on('click', function(event) {
+      event.preventDefault();
+      $('.forms').show("slow");
+      $('.forms')[0].scrollIntoView({block: 'end', behavior: 'smooth'});
+    });
+  });
+
   $('.favorite').on('click', function(event){
     event.preventDefault();
     var favorite = $(event.toElement).closest('li');
@@ -17,7 +27,6 @@ $(document).ready(function() {
       },
     })
     .done(function(response) {
-      // alert(response.venue + " added to your favorites!")
       $.modal("<div class='fav-modal'><h3>"+response.venue+" added to your favorites</h3></div>");
       setTimeout($.modal.close, 5000);
       window.location.href = response.redirect;
@@ -27,8 +36,6 @@ $(document).ready(function() {
       alert(errors);
     })
   });
-
-
 
   $('.remove').on('click', function(event){
     event.preventDefault();
