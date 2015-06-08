@@ -7,8 +7,12 @@ $(document).ready(function() {
   entryPoints.forEach(function(entry){
     $(entry).on('click', function(event) {
       event.preventDefault();
-      $('.forms').show("slow");
-      $('.forms')[0].scrollIntoView({block: 'end', behavior: 'smooth'});
+      $('.addedContent')[0].scrollIntoView({block: 'end', behavior: 'smooth'});
+      if (entry === '.login'){
+        $('.locateuser').show();
+      } else {
+        $('.locatenewuser').show();
+      }
     });
   });
 
