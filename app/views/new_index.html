@@ -96,7 +96,7 @@
     font-family: 'Raleway', sans-serif;
   }
 
-  .forms {
+  .locateuser, .locatenewuser {
     display: none;
   }
 
@@ -162,8 +162,48 @@
 
 </div>
 
-<div class="forms">
+<div class="addedContent">
+  <!-- Sign In Form -->
 
+  <form class="pure-form locateuser" action = "/login" method = "post">
+    <fieldset>
+        <!-- <legend>A compact inline form</legend> -->
+
+        <input class="loginem" type="email" placeholder="Email" name="email">
+        <input class="loginpw" type="password" placeholder="Password" name="password">
+
+        <button type="submit" class="pure-button button-error">Sign in</button>
+    </fieldset>
+  </form>
+
+  <!-- Sign Up Form -->
+    <form class="pure-form pure-form-aligned locatenewuser" action = "/users" method = "post">
+    <fieldset>
+      <div class="pure-control-group">
+        <label for="name">First Name</label>
+        <input id="name" class="createfn" type="text" placeholder="First name" name="user[first_name]">
+      </div>
+
+      <div class="pure-control-group">
+        <label for="name">Last Name</label>
+        <input id="name" class="createln" type="text" placeholder="Last name" name="user[last_name]">
+      </div>
+
+      <div class="pure-control-group">
+        <label for="email">Email Address</label>
+        <input id="email" class="createm" type="email" placeholder="Email Address" name="user[email]">
+      </div>
+
+      <div class="pure-control-group">
+        <label for="password">Password</label>
+        <input id="password" class="createpw" type="password" placeholder="Password" name="user[password]">
+      </div>
+
+      <div class="pure-controls">
+        <button type="submit" class="pure-button button-error">Sign Up</button>
+      </div>
+    </fieldset>
+  </form>
 </div>
 
 <footer>
