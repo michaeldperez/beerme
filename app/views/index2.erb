@@ -1,0 +1,36 @@
+<div class="bgdiv">
+<!-- <video autoplay loop class = "bgvid">
+<source src = "https://ia902505.us.archive.org/1/items/Beer_Pour/Beer%20Pour%20H264.mp4" type = "video/mp4">
+</video> -->
+
+<!-- <h1 class = "title">BeerMe!</h1> -->
+<div class = description>
+<p class = "beerme">Beer Me</p>
+
+<h2 class = "descript">Beer Me uses your geolocation to pinpoint the nearest places for you to find a beer, and helps get you there ASAP.</h2>
+</div>
+<div class="forms">
+<form class="pure-form locatenewuser" action = "/users" method = "post">
+  <fieldset class="pure-group">
+      <input type="text" class="pure-input-1-4 createfn" name = "user[first_name]" placeholder="First name">
+      <input type="text" class="pure-input-1-4 createln" name = "user[last_name]" placeholder="Last name">
+      <input type="email" class="pure-input-1-4 createm" name = "user[email]" placeholder="Email">
+      <input type="password" class="pure-input-1-4 createpw" name = "user[password]" placeholder="Password">
+  </fieldset>
+  <button type="submit" class="button-error pure-button pure-input-1-4">Sign Up</button>
+</form>
+
+
+<form class="pure-form locateuser" action = "/login" method = "post">
+    <fieldset class="pure-group">
+        <input type="email" name = "email" class="pure-input-1-4 loginem" placeholder="Email">
+        <input type="password" class="pure-input-1-4 loginpw" placeholder="Password">
+    </fieldset>
+    <button type="submit" class="button-error pure-button pure-input-1-4">Sign in</button>
+</form>
+</div>
+<footer>
+  <img class = "fslogo" src = "/images/pbfs.png" alt = "foursquare logo">
+</footer>
+</div>
+
