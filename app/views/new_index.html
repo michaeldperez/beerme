@@ -96,8 +96,19 @@
     font-family: 'Raleway', sans-serif;
   }
 
-  .locateuser, .locatenewuser {
+  .locateuser, .locatenewuser, .form-title-si, .form-title-su {
     display: none;
+  }
+
+  .forms {
+    text-align: center;
+  }
+
+  .button-error {
+    background: #FF0000;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   }
 
 </style>
@@ -162,9 +173,10 @@
 
 </div>
 
-<div class="addedContent">
+<div class="addedContent grid grid-pad">
   <!-- Sign In Form -->
-
+<div class="col-1-1 forms">
+  <h3 class="form-title-si">Sign In</h3>
   <form class="pure-form locateuser" action = "/login" method = "post">
     <fieldset>
         <!-- <legend>A compact inline form</legend> -->
@@ -177,6 +189,7 @@
   </form>
 
   <!-- Sign Up Form -->
+    <h3 class="form-title-su">Sign Up</h3>
     <form class="pure-form pure-form-aligned locatenewuser" action = "/users" method = "post">
     <fieldset>
       <div class="pure-control-group">
@@ -204,6 +217,7 @@
       </div>
     </fieldset>
   </form>
+ </div>
 </div>
 
 <footer>
