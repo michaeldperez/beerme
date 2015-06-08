@@ -9,8 +9,10 @@ $(document).ready(function() {
       event.preventDefault();
       $('.addedContent')[0].scrollIntoView({block: 'end', behavior: 'smooth'});
       if (entry === '.login'){
+        $('.form-title-si').show();
         $('.locateuser').show();
       } else {
+        $('.form-title-su').show();
         $('.locatenewuser').show();
       }
     });
