@@ -14,7 +14,7 @@
   width: 100%;
   height: 25em;
 }*/
-html {
+/*html {
   height: 100%;
 }
 
@@ -57,27 +57,27 @@ body {
 .button-error {
   background: #FF0000;
   color: #FFFFFF;
-}
+}*/
 
-.bgdiv {
-  background-image: url('../images/taps_Fotor.jpg');
-  /*background-repeat: no-repeat;*/
+/*.bgdiv {
+  /*background-image: url('../images/taps_Fotor.jpg');*/
+  background-repeat: no-repeat;
   background-size: 100%;
   height: 100%;
   width: 100%;
-}
+}*/
 
-.pure-input-1-4 {
+/*.pure-input-1-4 {
   width: 100% !important;
-}
+}*/
 
-.forms {
+/*.forms {
   width: 200px;
   padding: 20px;
   background-color: rgba(0,0,0,0.40);
   margin-left: 40px;
   border-radius: 5px;
-}
+}*/
 
 /*.bgvid {
 position: fixed;
@@ -91,7 +91,7 @@ z-index: -100;
 background-size: cover;
 }*/
 
-.create_account {
+/*.create_account {
   background-color: #FFFFFF;
   border-radius: 5px;
   box-shadow: 2px 2px #FF0000;
@@ -100,11 +100,11 @@ background-size: cover;
   height: 250px;
   padding: 5px;
   width: 200px;
-}
+}*/
 
-.formtitle {
+/*.formtitle {
   display: inline;
-}
+}*/
 
 /*.login {
   background-color: #FFFFFF;
@@ -179,11 +179,11 @@ a:visited {
   margin: 0 30px;
 }
 
-.fslogo {
+/*.fslogo {
   position: absolute;
   bottom: 0;
   left: 10px;
-}
+}*/
 
 .latitude, .longitude {
   display: none;
@@ -204,13 +204,13 @@ a:visited {
   overflow: scroll;
 }
 
-.directions-list {
+/*.directions-list {
   display: inline-block;
   height: 400px;
   margin-left: 10px;
   width: 400px;
   overflow: scroll;
-}
+}*/
 
 .fav-modal {
   background-color: rgba(0,0,0,0.80);
@@ -227,3 +227,107 @@ a:visited {
 
 /*New homepage*/
 
+.container {
+  height: 100%;
+  width: 100%;
+
+}
+
+.content {
+  padding: 10px;
+}
+
+.description {
+  background-image: url("../images/taps_Fotor.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 2px 9px #888;
+  width: 100%;
+  height: 340px;
+}
+
+.beerme {
+  font-size: 4em;
+  text-shadow: 3px 3px #000000;
+  margin-bottom: 0;
+  font-family: 'Bevan', cursive;
+  color: #FFFFFF;
+  margin-top: 0;
+}
+
+.descript {
+  color: #FFFFFF;
+  font-size: 1.25em;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 0;
+  text-shadow: 2px 2px #000000;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  text-shadow: 1px 1px #888;
+}
+
+.button {
+  background: linear-gradient(to bottom, #FF0000, #CF2C0C);
+  border: 1px solid #CF2C0C;
+  border-radius: 5px;
+  display: inline-block;
+  font-family: 'Raleway', sans-serif;
+  height: 50px;
+  padding: 10px 5px;
+  text-align: center;
+  text-decoration: none;
+  width: 100px;
+}
+
+.button a {
+  color: #FFFFFF;
+  font-weight: bold;
+  position: relative;
+  text-decoration: none;
+  text-shadow: 1px 1px #000000;
+  top: 5px;
+  vertical-align: middle;
+}
+
+h3 {
+  text-align: center;
+}
+
+img {
+  display: inline-block;
+}
+
+i {
+  position: relative;
+  left: 40%;
+}
+
+footer {
+  margin-top: 60px;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+section {
+  font-family: 'Raleway', sans-serif;
+}
+
+.locateuser, .locatenewuser, .form-title-si, .form-title-su {
+  display: none;
+}
+
+.forms {
+  text-align: center;
+}
+
+.button-error {
+  background: #FF0000;
+  border-radius: 4px;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
