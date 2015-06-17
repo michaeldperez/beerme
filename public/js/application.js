@@ -9,11 +9,11 @@ $(document).ready(function() {
       event.preventDefault();
       $('.addedContent')[0].scrollIntoView({block: 'end', behavior: 'smooth'});
       if (entry === '.login'){
-        $('.form-title-si').show();
-        $('.locateuser').show();
+        $('.form-title-si').slideDown();
+        $('.locateuser').slideDown();
       } else {
-        $('.form-title-su').show();
-        $('.locatenewuser').show();
+        $('.form-title-su').slideDown();
+        $('.locatenewuser').slideDown();
       }
     });
   });
