@@ -28,3 +28,18 @@ If you visited and enjoyed a particular venue, or want to save a location for fu
 
 - [Foursquare](https://developer.foursquare.com/)
 - [Google Maps](https://developers.google.com/maps/)
+
+## Updates
+
+This project is in the process of being updated. Proposed future changes include:
+
+- Decoupling the application and refactoring the API to be entirely json.
+- Re-writing the front-end in [React.js](https://facebook.github.io/react/).
+- Adding tests ([RSpec][rs] and [Mocha][mo]/[Chai][ch]).
+- Implementing a front-end build system.
+- Adding continuous integration.
+- Deploying application to [Heroku](https://www.heroku.com/).
+
+[rs]: http://rspec.info/
+[mo]: https://mochajs.org/
+[ch]: http://chaijs.com/
