@@ -21,18 +21,18 @@ var success = function(position){
   });
 
   request.done(function(response) {
-    window.location.href = response.redirect
+    window.location.href = response.redirect;
   });
 
   request.fail(function(response){
-    errors = JSON.parse(response.responseText).errors
+    errors = JSON.parse(response.responseText).errors;
     alert(errors);
-  })
-}
+  });
+};
 
 var fail = function() {
   alert(failMsg);
-}
+};
 
 
 var succLogin = function(position){
@@ -53,18 +53,18 @@ var succLogin = function(position){
   });
 
   request.done(function(response) {
-    window.location.href = response.redirect
+    window.location.href = response.redirect;
   });
 
   request.fail(function(response){
-    errors = JSON.parse(response.responseText).errors
+    errors = JSON.parse(response.responseText).errors;
     alert(errors);
-  })
-}
+  });
+};
 
 var failLogin = function() {
   alert(failMsg);
-}
+};
 
 
 
@@ -85,4 +85,4 @@ $(document).ready(function(){
 
 // .login
 
-})
+});

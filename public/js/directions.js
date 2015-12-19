@@ -53,6 +53,6 @@ $(document).ready(function(){
       initialize(response.startLat, response.startLon);
       // calcRoute(response.startLat, response.startLon, endLat, endLon);
       calcRoute(response.startLat, response.startLon, venue_destination);
-    })
+    });
   });
-})
+});
