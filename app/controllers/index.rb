@@ -49,7 +49,7 @@ get '/users/:id' do # changed from /profile
   erb :profile
 end
 
-get 'users/:id/favorites' do # changed from /:id/favorites
+get '/users/:id/favorites' do # changed from /:id/favorites
   @user = User.find(params[:id])
   erb :favorites
 end
@@ -71,7 +71,7 @@ post '/users/:id/favorites' do #changed from /profile
   end
 end
 
-delete '/favorites/:id' do # Should be users/:id/favorites/:id
+delete '/users/:user_id/favorites/:favorites_id' do # changed from users/:id/favorites/:id
   content_type :json
   if request.xhr?
     favorite = Favorite.find(params[:id])
