@@ -3,10 +3,18 @@ get '/' do
   erb :index
 end
 
-get '/profile' do # Should be users/:id
-  @user = User.find(session[:id])
-  # p venues(parse(get_fs_data))
-  erb :profile
+post '/login' do
+  content_type :json
+  @user = User.where(email: params[:user][:email]).first
+  if @user && @user.authenticate(params[:user][:password])
+    session[:id] = @user.id
+    session[:lon] = params[:lon]
+    session[:lat] = params[:lat]
+    { redirect: "/users/#{@user.id}" }.to_json # changed from /profile
+  else
+    status 400
+    { errors: "Could not find account, or email did not match account" }.to_json
+  end
 end
 
 get '/logout' do
@@ -14,11 +22,6 @@ get '/logout' do
   session.delete(:lon)
   session.delete(:lat)
   redirect '/'
-end
-
-get '/:id/favorites' do # Should be users/:id/favorites
-  @user = User.find(params[:id])
-  erb :favorites
 end
 
 get '/location' do
@@ -33,14 +36,25 @@ post '/users' do
     session[:id] = @user.id
     session[:lon] = params[:lon]
     session[:lat] = params[:lat]
-    { redirect: "/profile" }.to_json
+    { redirect: "/users/#{@user.id}" }.to_json # changed from /profile
   else
     status 400
     { errors: @user.errors.full_messages }.to_json
   end
 end
 
-post '/profile' do
+get '/users/:id' do # changed from /profile
+  @user = User.find(session[:id])
+  # p venues(parse(get_fs_data))
+  erb :profile
+end
+
+get 'users/:id/favorites' do # changed from /:id/favorites
+  @user = User.find(params[:id])
+  erb :favorites
+end
+
+post '/users/:id/favorites' do #changed from /profile
   content_type :json
   @user = current_user
   favorite = Favorite.new
@@ -50,24 +64,10 @@ post '/profile' do
   favorite.url = params[:url]
   if favorite.save
     @user.favorites << favorite
-    { venue: favorite.venue, redirect: "/profile" }.to_json
+    { venue: favorite.venue, redirect: "/users/#{@user.id}" }.to_json #changed from /profile
   else
     status 400
     { errors: "Venue could not be saved." }.to_json
-  end
-end
-
-post '/login' do
-  content_type :json
-  @user = User.where(email: params[:user][:email]).first
-  if @user && @user.authenticate(params[:user][:password])
-    session[:id] = @user.id
-    session[:lon] = params[:lon]
-    session[:lat] = params[:lat]
-    { redirect: "/profile" }.to_json
-  else
-    status 400
-    { errors: "Could not find account, or email did not match account" }.to_json
   end
 end
 
