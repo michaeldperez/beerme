@@ -20,9 +20,10 @@ $(document).ready(function() {
 
   $('.favorite').on('click', function(event){
     event.preventDefault();
+    var id = this.id;
     var favorite = $(event.toElement).closest('li');
     $.ajax({
-      url: '/profile',
+      url: '/users/'+id+'/favorites',
       type: 'POST',
       dataType: 'json',
       data: {
@@ -38,17 +39,18 @@ $(document).ready(function() {
       window.location.href = response.redirect;
     })
     .fail(function(response){
-      var errors = JSON.parse(response.responseText).errors
+      var errors = JSON.parse(response.responseText).errors;
       alert(errors);
-    })
+    });
   });
 
   $('.remove').on('click', function(event){
     event.preventDefault();
+    var userId = $(this).data('userid');
     var id = this.id;
     var venue = this.closest('li');
     $.ajax({
-      url: '/favorites/'+id, // This needs to be users/id/favorites/id
+      url: '/users/'+userId+'/favorites/'+id, // changed from /favorites/id
       type: 'DELETE',
       dataType: 'json',
       data: { id: id },
@@ -57,10 +59,10 @@ $(document).ready(function() {
       venue.remove();
     })
     .fail(function(response){
-      var errors = JSON.parse(response.responseText).errors
+      var errors = JSON.parse(response.responseText).errors;
       alert(errors);
-    })
-  })
-})
+    });
+  });
+});
 
 
