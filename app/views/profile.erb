@@ -1,6 +1,6 @@
 <div class="profilebody">
   <nav>
-    <a class = "nav" href="/<%= @user.id %>/favorites">View Favorites</a> ||
+    <a class = "nav" href="/users/<%= @user.id %>/favorites">View Favorites</a> ||
     <a class = "nav" href="/logout">Log out</a>
   </nav>
 
@@ -24,7 +24,7 @@
 
       <p class = "check">People currently checked in: <%= suggested["venue"]["hereNow"]["summary"] %> </p>
       <p class = "url">URL: <a href="<%=suggested["venue"]["url"]%>"><%= suggested["venue"]["url"] %></a></p>
-      <p><a class = "favorite" href="#">Add to favorites</a></p>
+      <p><a class = "favorite" id = "<%= @user.id %>" href="#">Add to favorites</a></p>
       <p class="latitude"><%= suggested["venue"]["location"]["lat"] %></p>
       <p class="longitude"><%= suggested["venue"]["location"]["lng"] %></p>
       <p><a class = "map" href="#">Map</a> || <a class = "directions" href="#">Directions</a></p>
