@@ -39,6 +39,7 @@ This project is in the process of being updated. Proposed future changes include
 - Implementing a front-end build system.
 - Adding continuous integration.
 - Deploying application to [Heroku](https://www.heroku.com/).
+- (Ideal): Replace jQuery with vanilla JavaScript.
 
 [rs]: http://rspec.info/
 [mo]: https://mochajs.org/
